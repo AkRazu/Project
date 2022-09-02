@@ -3,7 +3,9 @@ document.getElementById("add-btn").addEventListener("click", function () {
   count++;
   const inputValue = document.getElementById("input-value").value;
   if (inputValue == "") {
-    alert("Please enter a value");
+    alert("Please Enter a valid Value");
+  } else if (inputValue > 0) {
+    alert("Use String Not Number 😊");
   } else {
     const mainContainer = document.getElementById("content-container");
     const tableContainer = document.createElement("tr");
@@ -17,20 +19,20 @@ document.getElementById("add-btn").addEventListener("click", function () {
     </td>`;
     mainContainer.appendChild(tableContainer); //1.35 min
 
-    document.getElementById('input-value').value='';
+    document.getElementById("input-value").value = "";
 
-    const deleteButton= document.getElementsByClassName('delete-btn');
-    const doneButton= document.getElementsByClassName('done-btn');
-    for (const button of deleteButton){
-      button.addEventListener('click',function(e){
-        e.target.parentNode.parentNode.style.display='none';
-      })
+    const deleteButton = document.getElementsByClassName("delete-btn");
+    const doneButton = document.getElementsByClassName("done-btn");
+    for (const button of deleteButton) {
+      button.addEventListener("click", function (e) {
+        e.target.parentNode.parentNode.style.display = "none";
+      });
     }
 
-    for(const button of doneButton){
-      button.addEventListener('click',function(e){
-        e.target.parentNode.parentNode.style.textDecoration = 'line-through';
-      })
+    for (const button of doneButton) {
+      button.addEventListener("click", function (e) {
+        e.target.parentNode.parentNode.style.textDecoration = "line-through";
+      });
     }
   }
 });
