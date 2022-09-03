@@ -3,7 +3,7 @@ document.getElementById("add-btn").addEventListener("click", function () {
   count++;
   const inputValue = document.getElementById("input-value").value;
   if (inputValue == "") {
-    alert("Please Enter a valid Value");
+    alert("Please Enter a valid Valued");
   } else if (inputValue > 0) {
     alert("Use String Not Number 😊");
   } else {
@@ -17,7 +17,7 @@ document.getElementById("add-btn").addEventListener("click", function () {
     <button class="btn btn-danger delete-btn">Delete</button>
     <button class="btn btn-success done-btn">Done</button>
     </td>`;
-    mainContainer.appendChild(tableContainer); //1.35 min
+    mainContainer.appendChild(tableContainer);
 
     document.getElementById("input-value").value = "";
 
@@ -35,4 +35,10 @@ document.getElementById("add-btn").addEventListener("click", function () {
       });
     }
   }
+});
+
+document.getElementById("clear").addEventListener("click", function () {
+  let Content = document.getElementById("content-container");
+  console.log(Content);
+  Content.style.display = "none";
 });
